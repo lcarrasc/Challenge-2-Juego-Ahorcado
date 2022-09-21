@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/reset.css" rel="stylesheet" >
+    <link href="css/style.css" rel="stylesheet">
+    <title>Juego El Ahorcado</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo">
+            <img src="images/Logo.png" alt="Logo Letra A de Alura">
+        </h1>
+    </header>
+   
+    <main >
+        <!-- Sector que corresponde a la primera página del Juego -->
+
+        <div id="sector-index" class="sector-index" >
+            <button id="Inicio-Juego" class="boton boton-azul boton-iniciar" onclick="IniciarJuego()" >Iniciar Juego</button>
+           
+            <button id="Agregar-Palabra" class="boton boton-celeste boton-agregar-palabra" onclick="AgregarPalabra()" >Agregar Palabra</button>
+            
+        </div>
+
+         <!-- Sector que corresponde a la zona donde se juega -->
+
+        <div id="sector-jugar" class="sector-jugar" >
+           
+            <canvas class="tablero-ahorcado" id="tablero-ahorcado" width="1200px" height="880px" ></canvas>
+            
+            <div  class="botones-jugar">
+                <button class="boton boton-azul boton-nuevo-juego" onclick="IniciarJuego()">Nuevo Juego</button>
+                <form action="index.html" method="POST">
+                    <button class="boton boton-celeste boton-desistir" >Desistir</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sector que corresponde a la zona donde se agrega la nueva palabra -->
+
+        <div id="sector-agregar-palabra" class="sector-agregar-palabra">
+
+            <input id="ingreso-texto" class="ingreso-texto" type="text" size="8" maxlength="8" placeholder="Ingrese una palabra">
+
+            <div class="aviso">
+                <img  src="images/exclamacion.png" alt="simbolo de exclamacion">
+                <p> Máximo 8 letras.</p>
+            </div>
+        
+            <div class="botones-agregar-palabra">
+                
+                    <button class="boton boton-azul boton-guardar-empezar" onclick="Guardar()" >Guardar y empezar</button>
+                
+                <form action="index.html" method="POST">
+                    <button class="boton boton-celeste boton-cancelar" >Cancelar</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="js/ahorcado.js"></script>
+    </main>
+    <footer >
+        <p class="copyright">Desarrollado por Luis Carrasco (Github: <a href="https://github.com/lcarrasc">https://github.com/lcarrasc</a>)</p>
+    </footer>
+</body>
+</html>
